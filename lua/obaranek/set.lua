@@ -28,5 +28,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.o.shell = "zsh"
+vim.o.shellcmdflag = "-ic"
+
 -- vim.g.netrw_hide = 1
 -- vim.g.netrw_silent = 1
