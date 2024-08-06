@@ -2,9 +2,9 @@
 vim.g.mapleader = ' '
 
 -- -- set the explore command to <leader>op
--- vim.keymap.set("n", '<leader>op', vim.cmd.Ex)
+vim.keymap.set("n", '<leader>op', vim.cmd.Ex)
 
--- Map 'jk' and 'kj' to escape in insert mode
+--e Map 'jk' and 'kj' to escape in insert mode
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', {noremap = true})
 vim.api.nvim_set_keymap('i', 'kj', '<Esc>', {noremap = true})
 
@@ -58,4 +58,13 @@ end
 
 -- Map <leader>op to toggle netrw
 vim.api.nvim_set_keymap('n', '<leader>op', ':lua ToggleNetrw()<CR>', { noremap = true, silent = true })
+
+
+-- Neotest keymaps
+vim.api.nvim_set_keymap('n', '<leader>tn', ':lua require("neotest").run.run()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tf', ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ts', ':lua require("neotest").run.stop()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ta', ':lua require("neotest").run.attach()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tr', ':lua require("neotest").summary.toggle()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>to", ':lua require("neotest").output.open()<CR>', { noremap = true, silent = true }) 
 
